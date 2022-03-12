@@ -1,0 +1,62 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>User Login</h2>
+        <div class="line-dec"></div>
+       
+      </div>
+      <div class="row">
+        
+          <div class="container">
+            <b class='text-danger'>
+              {{msg}}
+            </b>
+
+            <form id="contact" action="/login" method="post">
+            {% csrf_token %}
+              <div class="row">
+                <div class="col-md-12">
+                  <fieldset>
+                    <input
+                      name="email"
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      placeholder="Your email..."
+                      required=""
+                    />
+                  </fieldset>
+                </div>
+                
+                <div class="col-md-12">
+                  <fieldset>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Your Password..."
+                      required=""
+                    />
+                  </fieldset>
+                </div>
+
+                
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button">
+                      Login
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>        
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

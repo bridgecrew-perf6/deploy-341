@@ -1,0 +1,96 @@
+{% extends 'master.html' %}
+
+{% block content %}
+<section class="section contact-me" data-section="section4">
+    <div class="container">
+      <div class="section-heading">
+        <h2>User Registeration</h2>
+        <div class="line-dec"></div>
+       
+      </div>
+      <div class="row">
+        <div class="right-content">
+          <div class="container">
+
+            <b class='text-danger'>
+              {{msg}}
+            </b>
+
+            <form id="contact" action="/saveuser"
+               method="post">
+               {% csrf_token %}
+              <div class="row">
+                <div class="col-md-6">
+                  <fieldset>
+                    <input
+                      name="name"
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      placeholder="Your name..."
+                      required=""
+                    />
+                  </fieldset>
+                </div>
+                <div class="col-md-6">
+                  <fieldset>
+                    <input
+                      name="email"
+                      type="text"
+                      class="form-control"
+                      id="email"
+                      placeholder="Your email..."
+                      required=""
+                    />
+                  </fieldset>
+                </div>
+                
+                <div class="col-md-6">
+                  <fieldset>
+                    <input
+                      name="password"
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      placeholder="Your Password..."
+                      required=""
+                    />
+                  </fieldset>
+                </div>
+
+                <div class="col-md-6">
+                  <fieldset>
+                    <select
+                      name="group"
+                      class="form-control"
+                      id="group"
+                      required
+                    >
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                    </select>
+                  </fieldset>
+                </div>
+                
+                <div class="col-md-12">
+                  <fieldset>
+                    <button type="submit" id="form-submit" class="button">
+                      Register
+                    </button>
+                  </fieldset>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

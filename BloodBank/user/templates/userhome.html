@@ -1,0 +1,33 @@
+{% extends 'usermaster.html' %}
+
+{% block content %}
+<section class="section contact-me" data-section="section4">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Hello {{name}}</h2>      
+            <img src="/static/assets/user/{{request.session.loginuser.profilepic}}" style="width:100px" alt="" />
+            <div class="line-dec"></div>           
+          </div>          
+        </div>
+        
+        <table class='table'>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Blood Group</th>
+                <th>Image</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <th>{{user.username}}</th>
+                    <th>{{user.email}}</th>
+                    <th>{{user.bloodgroup}}</th>
+                    <th>
+                    <img src="/static/assets/user/{{user.profilepic}}" style="width:100px" alt="" />
+                    </th>
+                </tr>
+            {% endfor %}
+        </table>
+</section>          
+
+{% endblock %}              
